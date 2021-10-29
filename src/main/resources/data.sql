@@ -1,0 +1,1 @@
+insert into application_user
