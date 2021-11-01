@@ -9,7 +9,7 @@ import java.util.Date;
 //TODO Add Lombok!
 
 @Entity
-@Table(name="ApplicationUser")
+@Table(name="application_user")
 public class User implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
