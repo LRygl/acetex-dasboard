@@ -35,6 +35,7 @@ import static org.springframework.util.MimeTypeUtils.IMAGE_JPEG_VALUE;
 
 @RestController
 @RequestMapping(path = {"/","/user"})
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserResource extends ExceptionHandling {
     private UserService userService;
     private AuthenticationManager authenticationManager;
