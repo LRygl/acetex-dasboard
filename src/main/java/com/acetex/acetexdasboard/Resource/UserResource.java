@@ -32,7 +32,7 @@ import static com.acetex.acetexdasboard.Constants.FileConstant.*;
 import static com.acetex.acetexdasboard.Constants.SecurityConstant.JWT_TOKEN_HEADER;
 import static org.springframework.util.MimeTypeUtils.IMAGE_JPEG_VALUE;
 
-
+@CrossOrigin(origins = "http://localhost:4200")
 @RestController
 @RequestMapping(path = {"/","/user"})
 public class UserResource extends ExceptionHandling {

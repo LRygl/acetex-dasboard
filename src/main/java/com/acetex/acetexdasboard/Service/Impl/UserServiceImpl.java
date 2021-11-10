@@ -229,6 +229,7 @@ public class UserServiceImpl implements UserService, UserDetailsService {
 
     private void saveProfileImage(User user, MultipartFile profileImage) throws IOException {
         if (profileImage != null){
+            // TODO Resolve why the folder is not created for new user
             Path userFolder = Paths.get(USER_FOLDER + user.getUsername()).toAbsolutePath().normalize();
             if(!Files.exists(userFolder)){
                 Files.createDirectories(userFolder);
@@ -263,6 +264,6 @@ public class UserServiceImpl implements UserService, UserDetailsService {
     }
 
     private String getTemporaryProfileImageUrl(String username){
-        return ServletUriComponentsBuilder.fromCurrentContextPath().path(DEFAULT_USER_IMAGE_PATH + username).toUriString();
+        return ServletUriComponentsBuilder.fromCurrentContextPath().path(DEFAULT_USER_IMAGE_PATH  + username).toUriString();
     }
 }
