@@ -32,7 +32,7 @@ import static com.acetex.acetexdasboard.Constants.FileConstant.*;
 import static com.acetex.acetexdasboard.Constants.SecurityConstant.JWT_TOKEN_HEADER;
 import static org.springframework.util.MimeTypeUtils.IMAGE_JPEG_VALUE;
 
-@CrossOrigin(origins = "http://localhost:4200")
+/*@CrossOrigin(origins = "http://localhost:4200")*/
 @RestController
 @RequestMapping(path = {"/","/user"})
 public class UserResource extends ExceptionHandling {
@@ -128,7 +128,7 @@ public class UserResource extends ExceptionHandling {
 
     @GetMapping(path = "/image/profile/{username}", produces = IMAGE_JPEG_VALUE)
     public byte[] getTempProfileImage(@PathVariable("username") String username) throws IOException {
-        URL url = new URL(TEMP_PROFILE_IMAGE_BASE_URL + username);
+        URL url = new URL(TEMP_PROFILE_IMAGE_BASE_URL+ FORWARD_SLASH + username);
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
         try (InputStream inputStream = url.openStream()){
             int bytesRead;
