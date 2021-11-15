@@ -25,7 +25,7 @@ public class AcetexDasboardApplication {
 		new File(USER_FOLDER).mkdirs();
 	}
 
-	//TODO - CLI Insert Admin Account at startup
+	//TODO - CLI Insert Admin Account at startups
 
 
 
